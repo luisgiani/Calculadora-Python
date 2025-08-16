@@ -1,5 +1,11 @@
 import tkinter
 
+def soma():
+    resultado = num1 + num2
+
+def subtracao():
+    resultado = num1 - num2
+
 
 
 def main():
