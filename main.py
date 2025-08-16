@@ -1,4 +1,6 @@
-import tkinter
+import tkinter as tk
+
+
 
 def soma():
     resultado = num1 + num2
