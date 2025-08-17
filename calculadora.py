@@ -1,14 +1,14 @@
 import flet as ft
 
 def main (page: ft.Page):
-    page.btcolor = 'black'
-    page.window_resizable = False
-    page.window_width = 250
-    page.window_height = 300
+    page.bgcolor = 'black'
+    page.window.resizable = False
+    page.window.width = 450
+    page.window.height = 600
     page.title = 'Calculadora'
+    page.window.always_on_top = True
 
-
-
+    page.add(ft.Text("Calculadora", size=20, color="white"))
 
 
 
