@@ -1,15 +1,61 @@
 import flet as ft
 
+botoes = [
+{'operador': 'AC', 'fonte': 'black', 'fundo': 'white'},
+{'operador': '()', 'fonte': 'black', 'fundo': 'white'},
+{'operador': '%', 'fonte': 'black', 'fundo': 'white'},
+{'operador': '/', 'fonte': 'white', 'fundo': 'orange'},
+{'operador': '7', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '8', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '9', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '*', 'fonte': 'white', 'fundo': 'orange'},
+{'operador': '4', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '5', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '6', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '-', 'fonte': 'white', 'fundo': 'orange'},
+{'operador': '1', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '2', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '3', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '+', 'fonte': 'white', 'fundo': 'orange'},
+{'operador': '0', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '.', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '=', 'fonte': 'white', 'fundo': 'orange'}
+]
+
+
 def main (page: ft.Page):
     page.bgcolor = 'black'
     page.window.resizable = False
-    page.window.width = 450
-    page.window.height = 600
+    page.window.width = 430
+    page.window.height = 620
     page.title = 'Calculadora'
     page.window.always_on_top = True
 
-    page.add(ft.Text("Calculadora", size=20, color="white"))
+    resultado = ft.Text('0', size=40, color='white')
 
+    display = ft.Row(
+        width=430,
+        alignment='end',
+        controls=[resultado]
+    )
+
+    botao = [ft.Container(
+        content=ft.Text(value=btn['operador'], color=btn['fonte'], size=30),
+        width=90,
+        height=90,
+        border_radius=100,
+        bgcolor=btn['fundo'],
+        alignment= ft.alignment.center
+    ) for btn in botoes]
+
+    keyboard = ft.Row(
+        width=430,
+        wrap= True,
+        controls=botao,
+        alignment= 'end'
+    )
+
+    page.add(display, keyboard)
 
 
 
