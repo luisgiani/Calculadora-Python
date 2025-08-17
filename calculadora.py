@@ -1,24 +1,25 @@
 import flet as ft
+from flet import Colors
 
 botoes = [
 {'operador': 'AC', 'fonte': 'black', 'fundo': 'white'},
 {'operador': '()', 'fonte': 'black', 'fundo': 'white'},
 {'operador': '%', 'fonte': 'black', 'fundo': 'white'},
 {'operador': '/', 'fonte': 'white', 'fundo': 'orange'},
-{'operador': '7', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '8', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '9', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '7', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '8', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '9', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
 {'operador': '*', 'fonte': 'white', 'fundo': 'orange'},
-{'operador': '4', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '5', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '6', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '4', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '5', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '6', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
 {'operador': '-', 'fonte': 'white', 'fundo': 'orange'},
-{'operador': '1', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '2', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '3', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '1', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '2', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '3', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
 {'operador': '+', 'fonte': 'white', 'fundo': 'orange'},
-{'operador': '0', 'fonte': 'white', 'fundo': 'gray'},
-{'operador': '.', 'fonte': 'white', 'fundo': 'gray'},
+{'operador': '0', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
+{'operador': '.', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
 {'operador': '=', 'fonte': 'white', 'fundo': 'orange'}
 ]
 
