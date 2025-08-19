@@ -34,6 +34,30 @@ def main (page: ft.Page):
 
     resultado = ft.Text('0', size=40, color='white')
 
+    def calculate():
+        pass
+
+    def select(e):
+        valor_atual = resultado.value if resultado.value != '0' else ''
+        value = e.control.content.value
+
+        if value.isdigit():
+            value = valor_atual + value
+
+        elif value == 'AC':
+            value = '0'
+        else:
+            if valor_atual and valor_atual[-1] in ('/','*','-','+','.'):
+                value = valor_atual[:-1]
+
+            value = valor_atual + value
+
+            if value[-1] in ('=', '%', '()'):
+                value = calculate()
+
+            resultado.value = value
+            resultado.update()
+
     display = ft.Row(
         width=430,
         alignment='end',
@@ -46,7 +70,8 @@ def main (page: ft.Page):
         height=90,
         border_radius=100,
         bgcolor=btn['fundo'],
-        alignment= ft.alignment.center
+        alignment= ft.alignment.center,
+        on_click = select
     ) for btn in botoes]
 
     keyboard = ft.Row(
