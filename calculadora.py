@@ -3,7 +3,7 @@ from flet import Colors
 
 botoes = [
 {'operador': 'AC', 'fonte': 'black', 'fundo': 'white'},
-{'operador': '()', 'fonte': 'black', 'fundo': 'white'},
+{'operador': '±', 'fonte': 'black', 'fundo': 'white'},
 {'operador': '%', 'fonte': 'black', 'fundo': 'white'},
 {'operador': '/', 'fonte': 'white', 'fundo': 'orange'},
 {'operador': '7', 'fonte': 'white', 'fundo': ft.Colors.WHITE24},
@@ -37,6 +37,13 @@ def main (page: ft.Page):
     def calculate(operador, valor_atual):
         value = eval(valor_atual)
 
+        if operador == '%':
+            value /= 100
+        elif operador == '±':
+            value = -value
+        
+        return value
+
     def select(e):
         valor_atual = resultado.value if resultado.value != '0' else ''
         value = e.control.content.value
@@ -48,11 +55,11 @@ def main (page: ft.Page):
             value = '0'
         else:
             if valor_atual and valor_atual[-1] in ('/','*','-','+','.'):
-                value = valor_atual[:-1]
+                valor_atual = valor_atual[:-1]
 
             value = valor_atual + value
 
-            if value[-1] in ('=', '%', '()'):
+            if value[-1] in ('=', '%', '±'):
                 value = calculate(operador=value[-1], valor_atual=valor_atual)
 
             resultado.value = value
