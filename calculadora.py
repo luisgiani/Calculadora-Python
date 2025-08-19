@@ -34,8 +34,8 @@ def main (page: ft.Page):
 
     resultado = ft.Text('0', size=40, color='white')
 
-    def calculate():
-        pass
+    def calculate(operador, valor_atual):
+        value = eval(valor_atual)
 
     def select(e):
         valor_atual = resultado.value if resultado.value != '0' else ''
@@ -53,7 +53,7 @@ def main (page: ft.Page):
             value = valor_atual + value
 
             if value[-1] in ('=', '%', '()'):
-                value = calculate()
+                value = calculate(operador=value[-1], valor_atual=valor_atual)
 
             resultado.value = value
             resultado.update()
