@@ -98,4 +98,4 @@ def main(page: ft.Page):
 
     page.add(display, keyboard)
 
-ft.app(target=main).
+ft.app(target=main)
